@@ -48,25 +48,7 @@
     {
         "type": "shell",
         "inline": [
-            "sudo apt-get install software-properties-common"
-        ]
-    },
-    {
-        "type": "shell",
-        "inline": [
-            "sudo apt-add-repository ppa:ansible/ansible"
-        ]
-    },
-    {
-        "type": "shell",
-        "inline": [
-            "sudo apt-get update"
-        ]
-    },
-    {
-        "type": "shell",
-        "inline": [
-            "sudo apt-get install ansible"
+            "sudo yum install ansible"
         ]
     },
     {
