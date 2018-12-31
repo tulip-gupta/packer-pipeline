@@ -48,19 +48,8 @@
     {
         "type": "shell",
         "inline": [
-            "sudo yum install epel-release"
-        ]
-    },
-    {
-        "type": "shell",
-        "inline": [
-            "sudo yum repolist"
-        ]
-    },
-    {
-        "type": "shell",
-        "inline": [
-            "sudo yum install ansible"
+            "sudo yum install epel-release",
+            "sudo yum install ansible
         ]
     },
     {
