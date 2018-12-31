@@ -48,8 +48,12 @@
     {
         "type": "shell",
         "inline": [
-            "sudo yum install epel-release",
-            "sudo yum install ansible"
+"sudo yum -y update",
+"sudo yum install wget",
+ "wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm",
+ "sudo rpm -ivh epel-release-7-6.noarch.rpm",
+ "sudo yum repolist",
+ "suod yum install ansible"
         ]
     },
     {
