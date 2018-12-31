@@ -38,7 +38,11 @@
     "ami_description": "Amazon Linux CIS with Cloudwatch Logs agent",
     "associate_public_ip_address": "true",
     "vpc_id": "{{user `vpc`}}",
-    "subnet_id": "{{user `subnet`}}"
+    "subnet_id": "{{user `subnet`}}",
+    "ami_groups": "{{user `ami_groups`}}",
+    "communicator": "ssh",
+    "ssh_file_transfer_method": "sftp", 
+    "ssh_pty": true
   }],
   "provisioners": [
     {
