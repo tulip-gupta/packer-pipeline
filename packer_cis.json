@@ -48,9 +48,27 @@
     {
         "type": "shell",
         "inline": [
-            "sudo pip install ansible"
+            "sudo apt-get install software-properties-common"
         ]
-    }, 
+    },
+    {
+        "type": "shell",
+        "inline": [
+            "sudo apt-add-repository ppa:ansible/ansible"
+        ]
+    },
+    {
+        "type": "shell",
+        "inline": [
+            "sudo apt-get update"
+        ]
+    },
+    {
+        "type": "shell",
+        "inline": [
+            "sudo apt-get install ansible"
+        ]
+    },
     {
         "type": "ansible-local",
         "playbook_file": "ansible/playbook.yaml",
