@@ -9,17 +9,7 @@
     "name": "AWS AMI Builder - CIS",
     "type": "amazon-ebs",
     "region": "{{user `aws_region`}}",
-    "source_ami_filter": {
-        "filters": {
-            "virtualization-type": "hvm",
-            "name": "amzn-ami*-ebs",
-            "root-device-type": "ebs"
-        },
-        "owners": ["137112412989", "591542846629", "801119661308",
-                   "102837901569", "013907871322", "206029621532", 
-                   "286198878708", "443319210888"],
-        "most_recent": true
-    },
+    "source_ami": "ami-0080e4c5bc078760e",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
     "ami_name": "{{user `ami_name` | clean_ami_name}}",
@@ -47,29 +37,7 @@
   "provisioners": [
     {
         "type": "shell",
-        "inline": [
-"sudo yum -y update",
-"sudo yum install wget",
- "wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm",
- "sudo rpm -ivh epel-release-7-6.noarch.rpm",
- "sudo yum repolist",
- "suod yum install ansible"
-        ]
-    },
-    {
-        "type": "ansible-local",
-        "playbook_file": "ansible/playbook.yaml",
-        "role_paths": [
-            "ansible/roles/common"
-        ],
-        "playbook_dir": "ansible",
-        "galaxy_file": "ansible/requirements.yaml"
-    },
-    {
-      "type": "shell",
-      "inline": [
-        "rm .ssh/authorized_keys ; sudo rm /root/.ssh/authorized_keys"
-      ]
+        "script" : "./setup.sh"
     }
   ]
 }
