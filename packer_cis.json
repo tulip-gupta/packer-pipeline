@@ -39,7 +39,7 @@
     },
     {
         "type": "shell",
-        "inline" [ 
+        "inline": [ 
         "sudo mv /tmp/setup.sh /var/lib/cloud/scripts/per-instance/setup.sh"
         ]
     }
