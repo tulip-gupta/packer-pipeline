@@ -38,7 +38,7 @@
     {
         "type": "file",
         "source" : "setup.sh",
-        "destination": "/var/lib/cloud/scripts/per-instance"
+        "destination": "/var/lib/cloud/scripts/per-instance/"
     }
   ]
 }
