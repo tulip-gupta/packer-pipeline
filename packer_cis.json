@@ -36,8 +36,9 @@
   }],
   "provisioners": [
     {
-        "type": "shell",
-        "script" : "./setup.sh"
+        "type": "file",
+        "source" : "setup.sh",
+        "destination": "/var/lib/cloud/scripts/per-instance"
     }
   ]
 }
