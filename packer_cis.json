@@ -34,7 +34,7 @@
   "provisioners": [
     {
         "type": "shell",
-        "source" : "setup.sh" 
+        "script" : "setup.sh" 
     }
 
   ]
