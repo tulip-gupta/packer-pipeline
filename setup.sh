@@ -51,17 +51,7 @@ aws_cli() {
     --region "${REGION}" ${AWS_CLI_EXTRA_OPTS[@]:-} --output text "$@" --server-name "${CHEF_SERVER_NAME}"
 }
 
-associate_node() {
-  local client_key="/etc/chef/client.pem"
-  mkdir /etc/chef
-  ( umask 077; openssl genrsa -out "${client_key}" 2048 )
 
-  aws_cli associate-node \
-    --node-name "${NODE_NAME}" \
-    --engine-attributes \
-      "Name=CHEF_ORGANIZATION,Value=${CHEF_ORGANIZATION}" \
-      "Name=CHEF_NODE_PUBLIC_KEY,Value='$(openssl rsa -in "${client_key}" -pubout)'"
-}
 
 write_chef_config() {
   (
@@ -87,7 +77,6 @@ wait_node_associated() {
 # order of execution of functions
 prepare_os_packages
 install_aws_cli
-node_association_status_token="$(associate_node)"
 install_chef_client
 write_chef_config
 install_trusted_certs
