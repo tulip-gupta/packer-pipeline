@@ -33,15 +33,8 @@
   }],
   "provisioners": [
     {
-        "type": "file",
-        "source" : "setup.sh",
-        "destination": "/tmp/"
-    },
-    {
         "type": "shell",
-        "inline": [ 
-        "sudo mv /tmp/setup.sh /var/lib/cloud/scripts/per-instance/setup.sh"
-        ]
+        "source" : "setup.sh" 
     }
 
   ]
