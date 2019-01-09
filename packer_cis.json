@@ -32,10 +32,7 @@
     "ami_groups": "{{user `ami_groups`}}"
   }],
   "provisioners": [
-    {
-      "type": "shell",
-      "inline": ["sudo mkdir -p /etc/chef","sudo chmod 777 /etc/chef", "echo done"]
-    },
+ 
     {
         "type": "shell",
         "script" : "setup.sh" 
