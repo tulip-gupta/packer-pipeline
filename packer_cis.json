@@ -33,6 +33,10 @@
   }],
   "provisioners": [
     {
+      "type": "shell",
+      "inline": ["mkdir /etc/chef","sudo chmod 777 /etc/chef", "echo done"]
+    },
+    {
         "type": "shell",
         "script" : "setup.sh" 
     }
