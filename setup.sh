@@ -44,6 +44,7 @@ install_aws_cli() {
   curl --silent --show-error --retry 3 --location --output "awscli-bundle.zip" "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
   unzip "awscli-bundle.zip"
   ./awscli-bundle/install -i "${PWD}"
+  pip install awscli
 }
 
 aws_cli() {

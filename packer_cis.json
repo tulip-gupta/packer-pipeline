@@ -3,14 +3,12 @@
     "vpc": "{{env `BUILD_VPC_ID`}}",
     "subnet": "{{env `BUILD_SUBNET_ID`}}",
     "aws_region": "{{env `AWS_REGION`}}",
-    "ami_name": "Prod-CIS-Latest-AMZN-{{isotime \"02-Jan-06 03_04_05\"}}",
-    "iam_instance_profile": "{{env `IAM_INSTANCE_PROFILE`}}"
+    "ami_name": "Prod-CIS-Latest-AMZN-{{isotime \"02-Jan-06 03_04_05\"}}"
   },
   "builders": [{
     "name": "AWS AMI Builder - CIS",
     "type": "amazon-ebs",
     "region": "{{user `aws_region`}}",
-    "iam_instance_profile": "{{ user `iam_instance_profile`}}",
     "source_ami": "ami-0080e4c5bc078760e",
     "instance_type": "t2.micro",
     "ssh_username": "ec2-user",
