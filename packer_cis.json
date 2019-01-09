@@ -32,7 +32,7 @@
     "ami_groups": "{{user `ami_groups`}}"
   }],
   "provisioners": [
- 
+    
     {
         "type": "shell",
         "script" : "setup.sh" 

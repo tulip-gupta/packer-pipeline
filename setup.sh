@@ -54,6 +54,7 @@ aws_cli() {
 associate_node() {
   local client_key="/etc/chef/client.pem"
   sudo mkdir -p /etc/chef
+  sudo chmod 777 /etc/chef
   ( umask 077; openssl genrsa -out "${client_key}" 2048 )
 
   aws_cli associate-node \
